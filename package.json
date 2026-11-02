@@ -1,0 +1,17 @@
+{
+  "name": "zemaya-boutique",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "build": "node scripts.mjs",
+    "test": "node --test --test-isolation=none tests/*.test.js",
+    "export": "node export.mjs",
+    "wip": "npm run export && node wip.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

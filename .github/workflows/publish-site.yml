@@ -1,0 +1,45 @@
+name: Publier le site ZÉMAYA
+
+# La publication se lance manuellement depuis GitHub Actions.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Récupérer le projet
+        uses: actions/checkout@v4
+      - name: Préparer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Vérifier le panier
+        run: npm test
+      - name: Préparer la page et ses images
+        run: |
+          npm run export
+          mkdir -p _site
+          cp dist/zemaya.html _site/index.html
+          touch _site/.nojekyll
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Charger les fichiers du site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Publier le site
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,100 @@
+{
+  "source_start_seconds": 5,
+  "source_end_seconds": 10.041667,
+  "duration_seconds": 5.041667,
+  "frames": 60,
+  "fps": 12,
+  "source_sizes": {
+    "desktop": "960x540",
+    "mobile": "640x360"
+  },
+  "checks": [
+    {
+      "width": 1440,
+      "height": 900,
+      "forward_reverse_frames": [
+        1,
+        19,
+        44,
+        60,
+        31,
+        5
+      ],
+      "pinned": true,
+      "cta_visible": true,
+      "full_frame_visible": true,
+      "cart_persistence": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "forward_reverse_frames": [
+        1,
+        19,
+        44,
+        60,
+        31,
+        5
+      ],
+      "pinned": true,
+      "cta_visible": true,
+      "full_frame_visible": true,
+      "cart_persistence": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "forward_reverse_frames": [
+        1,
+        19,
+        44,
+        60,
+        31,
+        5
+      ],
+      "pinned": true,
+      "cta_visible": true,
+      "full_frame_visible": true,
+      "cart_persistence": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "forward_reverse_frames": [
+        1,
+        19,
+        44,
+        60,
+        30,
+        5
+      ],
+      "pinned": true,
+      "cta_visible": true,
+      "full_frame_visible": true,
+      "cart_persistence": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 360,
+      "height": 640,
+      "forward_reverse_frames": [
+        1,
+        19,
+        44,
+        60,
+        31,
+        5
+      ],
+      "pinned": true,
+      "cta_visible": true,
+      "full_frame_visible": true,
+      "cart_persistence": true,
+      "javascript_errors": []
+    }
+  ],
+  "self_contained_export": "passed",
+  "reduced_motion": "passed"
+}

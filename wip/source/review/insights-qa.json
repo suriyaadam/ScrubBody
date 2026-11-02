@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "routes": 9,
+      "empty_real_data": true,
+      "preview_separate": true,
+      "manual_save_persistence": true,
+      "paid_kpis": true,
+      "actual_growth": true,
+      "csv_export": true,
+      "json_import": true,
+      "search": true,
+      "profile": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "routes": 9,
+      "empty_real_data": true,
+      "preview_separate": true,
+      "manual_save_persistence": true,
+      "paid_kpis": true,
+      "actual_growth": true,
+      "csv_export": true,
+      "json_import": true,
+      "search": true,
+      "profile": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "routes": 9,
+      "empty_real_data": true,
+      "preview_separate": true,
+      "manual_save_persistence": true,
+      "paid_kpis": true,
+      "actual_growth": true,
+      "csv_export": true,
+      "json_import": true,
+      "search": true,
+      "profile": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "routes": 9,
+      "empty_real_data": true,
+      "preview_separate": true,
+      "manual_save_persistence": true,
+      "paid_kpis": true,
+      "actual_growth": true,
+      "csv_export": true,
+      "json_import": true,
+      "search": true,
+      "profile": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 360,
+      "routes": 9,
+      "empty_real_data": true,
+      "preview_separate": true,
+      "manual_save_persistence": true,
+      "paid_kpis": true,
+      "actual_growth": true,
+      "csv_export": true,
+      "json_import": true,
+      "search": true,
+      "profile": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "standalone": "passed",
+  "unit_tests": 30
+}

@@ -33,6 +33,8 @@ jobs:
           npm run export
           mkdir -p _site
           cp dist/zemaya.html _site/index.html
+          mkdir -p _site/insights
+          cp dist/insights.html _site/insights/index.html
           touch _site/.nojekyll
       - name: Configurer GitHub Pages
         uses: actions/configure-pages@v5

@@ -10,8 +10,8 @@ const downloads=resolve(project,'downloads');
 const archive=join(downloads,'zemaya-wip.zip');
 const marker='.zemaya-wip-generated.json';
 const owner='zemaya-wip-v1';
-const sourceFiles=['index.html','package.json','server.mjs','scripts.mjs','export.mjs','wip.mjs','README.md','PUBLICATION.md','WIP.md','src','public','tests','assets-source','review'];
-const optional=new Set(['README.md','PUBLICATION.md','WIP.md','assets-source','review']);
+const sourceFiles=['index.html','package.json','server.mjs','scripts.mjs','export.mjs','wip.mjs','README.md','PUBLICATION.md','WIP.md','src','public','tests','assets-source','review','insights','export-insights.mjs'];
+const optional=new Set(['README.md','PUBLICATION.md','WIP.md','assets-source','review','insights','export-insights.mjs']);
 const excluded=new Set(['node_modules','dist','wip','downloads','__pycache__','coverage']);
 
 async function exists(path){try{return await lstat(path);}catch(error){if(error.code==='ENOENT')return null;throw error;}}
@@ -74,6 +74,8 @@ try{
   const stagedOutput=join(stage,'wip');
   await mkdir(join(stagedOutput,'source'),{recursive:true});
   await cp(standalone,join(stagedOutput,'index.html'));
+  await mkdir(join(stagedOutput,'insights'),{recursive:true});
+  await cp(join(project,'dist/insights.html'),join(stagedOutput,'insights/index.html'));
   for(const name of sourceFiles){
     const path=join(project,name);
     if(!(await exists(path))){if(optional.has(name))continue;throw new Error(`Source nécessaire absente : ${name}`);}
@@ -84,7 +86,7 @@ try{
     if((await exists(join(stagedOutput,'source','review',name)))?.isFile())reviewLinks.push(`- [${label}](source/review/${name})`);
   }
   const reviewSection=reviewLinks.length?'\n\n## Captures vérifiées\n\n'+reviewLinks.join('\n'):'';
-  await writeFile(join(stagedOutput,'README.md'),`# ZÉMAYA — version en cours\n\nOuvrez index.html dans votre navigateur pour consulter le site autonome : les images et la vidéo disponibles au moment de l’export sont incluses. Aucun serveur n’est nécessaire pour cette consultation.\n\nPour modifier le projet, installez Node.js 22 ou ultérieur, ouvrez un terminal dans source/, puis lancez npm run dev. Le serveur utilise le port 5173. Les sources sont utilisables sans installation de dépendances.\n\nLe panier fonctionne côté navigateur. Les demandes de commande sont préparées pour WhatsApp : le client doit lui-même appuyer sur Envoyer, puis attendre la confirmation de la boutique. Le formulaire de contact et les paiements ne sont pas raccordés. Aucun paiement ni aucune confirmation de commande ne sont produits automatiquement. Les informations commerciales et juridiques doivent être complétées avant ouverture.\n\nLa lecture liée au défilement nécessite une vidéo fournie et un navigateur compatible ; les réglages de réduction des animations sont respectés.\n\nCe dossier est généré depuis les sources du projet. Conservez vos modifications dans une copie séparée avant de le régénérer.${reviewSection}\n`);
+  await writeFile(join(stagedOutput,'README.md'),`# ZÉMAYA — version en cours\n\nOuvrez index.html dans votre navigateur pour consulter le site autonome : les images et la vidéo disponibles au moment de l’export sont incluses. Aucun serveur n’est nécessaire pour cette consultation.\n\nPour consulter ZÉMAYA INSIGHTS, ouvrez insights/index.html. Ses données sont enregistrées uniquement dans ce navigateur ; le mode de prévisualisation est distinct et explicitement fictif.\n\nPour modifier le projet, installez Node.js 22 ou ultérieur, ouvrez un terminal dans source/, puis lancez npm run dev. Le serveur utilise le port 5173. Les sources sont utilisables sans installation de dépendances.\n\nLe panier fonctionne côté navigateur. Les demandes de commande sont préparées pour WhatsApp : le client doit lui-même appuyer sur Envoyer, puis attendre la confirmation de la boutique. Le formulaire de contact et les paiements ne sont pas raccordés. Aucun paiement ni aucune confirmation de commande ne sont produits automatiquement. Les informations commerciales et juridiques doivent être complétées avant ouverture.\n\nLa lecture liée au défilement nécessite une vidéo fournie et un navigateur compatible ; les réglages de réduction des animations sont respectés.\n\nCe dossier est généré depuis les sources du projet. Conservez vos modifications dans une copie séparée avant de le régénérer.${reviewSection}\n`);
   const files=await inventory(stagedOutput);
   await writeFile(join(stagedOutput,marker),JSON.stringify({owner,files},null,2)+'\n');
   const stagedArchive=join(stage,'zemaya-wip.zip');

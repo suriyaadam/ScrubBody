@@ -53,3 +53,14 @@ Les textes juridiques indiquent les informations manquantes : compléter l’ide
 
 ## Référence visuelle
 Panneaux arrondis, sections généreuses et présentation produit de la maquette, réinterprétés avec crème, papaye, sauge et bleu nuit. Aucun contenu de la marque de référence n’est repris.
+
+## ZÉMAYA INSIGHTS
+L’espace de gestion est accessible sous `insights/index.html` (ou `/insights/` sur le serveur). Il conserve l’identité crème, sauge et verte de ZÉMAYA avec une interface distincte : neuf vues, filtres de période et de recherche, graphiques interactifs, commandes, clients, produits, régions, rapports et profil.
+
+Les données réelles sont les commandes saisies manuellement ou importées depuis un fichier JSON validé. Une demande préparée dans WhatsApp n’est jamais automatiquement enregistrée comme reçue, confirmée ou payée. Le stockage est local au navigateur et à l’origine du site, sous `zemaya-insights-orders-v1` ; il n’est pas partagé entre appareils. Les exports JSON servent aux sauvegardes et les exports CSV aux rapports. Les imports sont validés intégralement avant enregistrement et les conflits de références sont refusés.
+
+Le chiffre d’affaires comprend les articles des commandes payées non annulées, hors livraison. Les quantités vendues suivent les mêmes règles. Le panier moyen divise ces recettes par le nombre de commandes payées. Une variation n’est affichée que si la période précédente fournit une base strictement positive. Les moyens de paiement représentent les choix déclarés, pas une preuve de règlement.
+
+Un mode de prévisualisation explicitement marqué comme fictif est disponible. Il ne persiste aucune commande et bloque les modifications et exports afin de préserver les données réelles. L’espace est vide au premier lancement. La déconnexion quitte cet espace local ; elle ne constitue pas une authentification serveur. Pour une exploitation partagée avec accès protégés, un backend d’authentification et de stockage devra être raccordé.
+
+`npm run export` génère aussi `dist/insights.html`, autonome. Le WIP contient `insights/index.html` en plus de la boutique et les sources complètes. Aucun fichier contenant des commandes enregistrées dans le navigateur n’est ajouté au dépôt ou à l’archive automatiquement.

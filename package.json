@@ -8,7 +8,7 @@
     "start": "node server.mjs",
     "build": "node scripts.mjs",
     "test": "node --test --test-isolation=none tests/*.test.js",
-    "export": "node export.mjs",
+    "export": "node export.mjs && node export-insights.mjs",
     "wip": "npm run export && node wip.mjs"
   },
   "engines": {

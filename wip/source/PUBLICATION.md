@@ -27,3 +27,6 @@ Dans l’environnement de développement, l’accès à l’API GitHub est soumi
 La scène commence à la seconde 5 de la vidéo originale et couvre ses 5,041667 dernières secondes. Elle avance et recule avec le défilement, conserve le produit final avant la collection et respecte la préférence de réduction des animations. Le cadrage complet et l’accès au bouton ont été vérifiés sur ordinateur et téléphone.
 
 Le panier fonctionne à 350 FDJ par référence. Le formulaire de contact reste sans service de réception. Les demandes de commande sont préparées puis envoyées par le client dans WhatsApp ; la boutique confirme les modalités et aucun paiement n’est automatisé. Les informations juridiques et les conditions de retour et de réclamation restent à compléter. La provenance des médias est documentée sous `public/images/PROVENANCE.md` et `assets-source/` conserve la vidéo originale fournie.
+
+## Espace ZÉMAYA INSIGHTS
+Le fichier autonome `docs/insights/index.html` peut être servi sous `/insights/`. Le WIP propose aussi cette page. Le code ne contient aucune commande réelle préremplie : les enregistrements de l’opérateur restent dans son navigateur. Ce mode local ne remplace pas un service d’authentification et de stockage partagé. Une future connexion serveur devra protéger les données et les comptes administrateurs.

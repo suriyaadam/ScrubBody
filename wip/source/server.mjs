@@ -49,7 +49,8 @@ export function createStaticServer({root=process.cwd()}={}){
       const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
       if(pathname.includes('\0')){errorResponse(req,res,400,'Chemin invalide');return;}
       const servingRoot=await rootPath;
-      const requested=resolve(servingRoot,'.'+(pathname==='/'?'/index.html':pathname));
+      const publicPath=pathname==='/'?'/index.html':pathname==='/insights'||pathname==='/insights/'?'/insights/index.html':pathname;
+      const requested=resolve(servingRoot,'.'+publicPath);
       if(pathname.split(/[\\/]/).some(segment=>segment.startsWith('.'))||!isWithinRoot(servingRoot,requested)){
         errorResponse(req,res,403,'Accès interdit');return;
       }

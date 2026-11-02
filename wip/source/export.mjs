@@ -10,7 +10,7 @@ const asDataUri=async (assetPath)=>{
 };
 let page=await readFile('index.html','utf8');
 const css=await readFile('src/styles.css','utf8');
-const sourcePaths=['src/data/products.js','src/data/hero-media.js','src/cart.js','src/hero-media.js','src/app.js'];
+const sourcePaths=['src/data/products.js','src/data/hero-media.js','src/cart.js','src/order.js','src/checkout.js','src/hero-media.js','src/app.js'];
 const sources=await Promise.all(sourcePaths.map(async path=>(await readFile(path,'utf8')).replace(/^import .*;\s*$/gm,'').replace(/\bexport (?=(?:const|function) )/g,'')));
 if(heroMedia.frameCount&&heroMedia.framePattern&&heroMedia.mobileFramePattern){
  const embeddedFrames={};

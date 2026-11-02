@@ -52,3 +52,65 @@
 }
 
 .arrow-icon{width:14px;height:14px;display:inline-block;flex:none;vertical-align:-2px}.text-link .arrow-icon{margin-left:4px}
+
+/* Livraison et demande WhatsApp. */
+.cart-delivery{margin-top:24px}
+.cart-delivery select,.checkout-dialog select{display:block;width:100%;min-width:0;min-height:48px;padding:12px;border:1px solid #cfc5b7;border-radius:3px;background:#fffcf7;color:var(--ink);font:inherit;font-size:13px}
+.cart-summary>div{align-items:baseline}
+.cart-summary #cart-shipping,.cart-summary #total{text-align:right}
+.checkout-dialog{width:960px;max-width:min(960px,calc(100vw - 28px));padding:30px}
+.checkout-dialog>p{max-width:720px}
+#checkout-back{margin:0 0 25px;min-height:44px;display:inline-flex;align-items:center}
+.checkout-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:start}
+.checkout-layout>*{min-width:0}
+.checkout-recap{padding:22px;background:#f0e8dc;border-radius:6px}
+.checkout-recap h3,#checkout-form>h3{margin:0 0 16px;font:25px/1.2 Georgia,serif}
+#checkout-summary>.checkout-items{list-style:none;padding:0;margin:0}
+.checkout-items li{display:flex;justify-content:space-between;align-items:start;gap:15px;padding:16px 0;border-bottom:1px solid #d3c8b8;font-size:12px}
+.checkout-items li:first-child{padding-top:0}
+.checkout-items li>div{min-width:0}
+.checkout-items li>strong{white-space:nowrap}
+.checkout-items small{display:block;color:#61625e;font-size:11px;margin-top:6px}
+.checkout-costs{margin:22px 0 0}
+.checkout-costs>div{display:flex;justify-content:space-between;gap:15px;padding:7px 0;font-size:12px}
+.checkout-costs dt{color:#555b57}
+.checkout-costs dd{margin:0;text-align:right;white-space:nowrap}
+.checkout-costs .checkout-grand-total{border-top:1px solid #cabcab;margin-top:14px;padding-top:18px;font-size:16px;font-weight:bold}
+.checkout-costs .checkout-grand-total dt{color:var(--ink)}
+.checkout-required-note,.checkout-field-hint,.checkout-submit-note{font-size:11px!important;color:#5a5c5c}
+.checkout-field-hint{margin:5px 0 0!important}
+.checkout-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.checkout-field-grid>div{min-width:0}
+.checkout-field-wide{grid-column:1/-1}
+#checkout-form input:not([type=radio]),#checkout-form textarea{background:#fffaf2;border:1px solid #d1c6b9;min-height:48px;font-size:13px}
+#checkout-form input[aria-invalid=true],#checkout-form select[aria-invalid=true],#checkout-form textarea[aria-invalid=true]{border-color:#9a391e}
+.checkout-payments{border:0;padding:0;margin:25px 0 20px;min-width:0}
+.checkout-payments legend{font-size:12px;font-weight:bold;margin-bottom:12px;padding:0}
+.checkout-payment-option{display:flex;align-items:center;gap:12px;padding:14px;margin:0 0 10px;border:1px solid #d1c6b9;border-radius:4px;min-height:52px;cursor:pointer;background:#fffaf2}
+.checkout-payment-option:has(input:checked){border-color:#7c8b68;background:#e8eddf}
+#checkout-form .checkout-payment-option input{width:20px;height:20px;min-height:20px;flex:none;margin:1px 0 0;padding:0;accent-color:#526447}
+.checkout-payment-option strong{font-size:12px;display:block}
+.checkout-payment-option small{display:block;font-size:11px;line-height:1.5;color:#5a5c5c;margin-top:5px}
+.checkout-errors{border-left:2px solid #a84121;padding:10px 14px;background:#f6e5dc;color:#893b25;font-size:12px!important}
+.checkout-submit-note{margin:20px 0 15px}
+#checkout-submit{width:100%;font-size:12px;min-height:48px;white-space:normal}
+.checkout-ready{margin-top:30px;padding:25px;background:#e5ebdc;border:1px solid #b9c4a9;border-radius:6px}
+.checkout-ready[hidden],.checkout-errors[hidden]{display:none}
+.checkout-ready h3{font:27px/1.2 Georgia,serif;margin-bottom:18px}
+.checkout-ready h4{font-size:13px;margin:20px 0 10px}
+.checkout-ready p,.checkout-ready li{font-size:13px!important}
+.checkout-ready ul{padding-left:20px}
+.checkout-ready .button{margin-top:10px}
+@media(max-width:767px){
+ .checkout-dialog{padding:22px 18px;max-width:calc(100vw - 20px)}
+ .checkout-layout{grid-template-columns:1fr;gap:25px}
+ .checkout-recap{padding:18px}
+ .checkout-field-grid{grid-template-columns:1fr;gap:8px}
+ .checkout-field-wide{grid-column:auto}
+ .checkout-costs .checkout-grand-total{font-size:15px}
+ .checkout-ready{padding:20px 16px}
+ .checkout-ready h3{font-size:25px}
+ #checkout-form input:not([type=radio]),#checkout-form textarea,.checkout-dialog select,.cart-delivery select{font-size:16px}
+}
+
+#checkout-payment-guidance{margin:12px 0 0!important;font-size:12px!important;line-height:1.6}

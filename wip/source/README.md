@@ -7,7 +7,7 @@ Node.js 22 ou ultérieur, aucune installation de dépendances nécessaire. Depui
 npm run dev
 ```
 Port 5173. `PORT=3000 npm start` permet de choisir un autre port.
-`npm test` vérifie le panier. `npm run build` prépare les fichiers statiques dans `dist/`, à servir avec un hébergement statique.
+`npm test` vérifie le panier, les tarifs, la validation du formulaire, les messages WhatsApp et le serveur vidéo. `npm run build` prépare les fichiers statiques dans `dist/`, à servir avec un hébergement statique.
 
 ## Choix technique
 Le dépôt initial était vide et l’installation des dépendances était bloquée lors de la création initiale. Le site utilise donc des modules JavaScript natifs et du CSS, sans dépendance réseau, plutôt que React/Vite. La version autonome intègre les médias pour consultation hors ligne ; la version source utilise un serveur statique.
@@ -35,9 +35,20 @@ Les fichiers et paramètres sont centralisés dans `src/data/hero-media.js`. Les
 ## Version HTML autonome
 `npm run export` produit `dist/zemaya.html`, un seul fichier contenant le style, le code et les images disponibles. Il s’ouvre sans serveur. Le panier persistant dépend de l’autorisation de stockage du navigateur pour les fichiers locaux. Pour un usage normal, privilégier le serveur local ou un hébergement statique.
 
+## Commandes WhatsApp et livraison
+Le parcours de commande prépare un message complet puis ouvre WhatsApp vers le numéro professionnel centralisé dans `WHATSAPP_NUMBER` de `src/order.js` : `221778682456`. Le client doit encore appuyer sur Envoyer dans WhatsApp. Aucun envoi à la boutique ni aucun règlement n’est affirmé par le site.
+
+Les tarifs sont centralisés dans `DELIVERY_ZONES` : Cité Hodan 0 FDJ, Djibouti-ville hors Cité Hodan 500 FDJ, Ali-Sabieh/Tadjourah/Dikhil/Obock/Arta 1 000 FDJ. Une zone absente ou inconnue laisse les frais et le total à préciser. Les calculs utilisent le prix de chaque référence du catalogue.
+
+Le formulaire exige nom, téléphone djiboutien (+253 et 8 chiffres, format national accepté), zone, quartier, adresse et un choix parmi D-Money, CAC Bank et paiement à la livraison. Les notes sont facultatives. Un identifiant unique et un récapitulatif incluant quantités, prix, remises à 0 FDJ, taxes à 0 FDJ, livraison et total sont préparés après validation. Les modalités de règlement sont confirmées par la boutique ; aucune coordonnée de paiement n’est inventée. Le panier reste conservé après préparation du message.
+
+Les champs de livraison restent dans le formulaire en mémoire, sans stockage local des coordonnées. La sélection d’une zone dans le panier se retrouve dans le formulaire ; le retour au panier conserve les champs. Le lien WhatsApp de reprise reste disponible si le navigateur bloque la nouvelle fenêtre. Les doubles validations identiques sont bloquées.
+
+Les tests navigateur interceptent l’ouverture de WhatsApp et contrôlent l’URL : ils n’envoient aucun message réel.
+
 ## Services et informations à compléter
 `contactConfig` dans `src/data/products.js` contient l’URL du futur service contact et les coordonnées à renseigner. Le formulaire ne prétend pas avoir envoyé de message tant qu’un service n’est pas configuré. L’API devra valider les données, protéger contre les abus et retourner un statut de succès uniquement après réception effective. Ne placer aucun secret dans le navigateur.
-Le panier et son récapitulatif fonctionnent localement. La prise de commande et le paiement ne sont pas activés : connecter une API, contrôler les prix côté serveur, définir livraison et conditions commerciales avant ouverture. Aucun paiement ou enregistrement de commande n’est annoncé.
+Les demandes de commande passent par WhatsApp, sans backend de commande ni paiement automatisé. La boutique confirme manuellement les disponibilités et les modalités. Les informations légales, les conditions de retour et de réclamation restent à compléter.
 Les textes juridiques indiquent les informations manquantes : compléter l’identité du vendeur, l’hébergement, les coordonnées et les politiques applicables avant publication. Adapter également la politique de confidentialité après branchement des services.
 
 ## Référence visuelle

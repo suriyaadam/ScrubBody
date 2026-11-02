@@ -1,0 +1,82 @@
+{
+  "browser_checks": [
+    {
+      "width": 1440,
+      "all_delivery_zones": true,
+      "cart_quantities_remove_restore": true,
+      "mandatory_fields": true,
+      "phone_253": true,
+      "three_payments": true,
+      "distinct_ids": true,
+      "accents_emoji_newlines": true,
+      "correct_whatsapp_number": true,
+      "duplicate_prevented": true,
+      "blocked_popup_fallback": true,
+      "back_to_cart_preserves_fields": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 1024,
+      "all_delivery_zones": true,
+      "cart_quantities_remove_restore": true,
+      "mandatory_fields": true,
+      "phone_253": true,
+      "three_payments": true,
+      "distinct_ids": true,
+      "accents_emoji_newlines": true,
+      "correct_whatsapp_number": true,
+      "duplicate_prevented": true,
+      "blocked_popup_fallback": true,
+      "back_to_cart_preserves_fields": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 768,
+      "all_delivery_zones": true,
+      "cart_quantities_remove_restore": true,
+      "mandatory_fields": true,
+      "phone_253": true,
+      "three_payments": true,
+      "distinct_ids": true,
+      "accents_emoji_newlines": true,
+      "correct_whatsapp_number": true,
+      "duplicate_prevented": true,
+      "blocked_popup_fallback": true,
+      "back_to_cart_preserves_fields": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 390,
+      "all_delivery_zones": true,
+      "cart_quantities_remove_restore": true,
+      "mandatory_fields": true,
+      "phone_253": true,
+      "three_payments": true,
+      "distinct_ids": true,
+      "accents_emoji_newlines": true,
+      "correct_whatsapp_number": true,
+      "duplicate_prevented": true,
+      "blocked_popup_fallback": true,
+      "back_to_cart_preserves_fields": true,
+      "javascript_errors": []
+    },
+    {
+      "width": 360,
+      "all_delivery_zones": true,
+      "cart_quantities_remove_restore": true,
+      "mandatory_fields": true,
+      "phone_253": true,
+      "three_payments": true,
+      "distinct_ids": true,
+      "accents_emoji_newlines": true,
+      "correct_whatsapp_number": true,
+      "duplicate_prevented": true,
+      "blocked_popup_fallback": true,
+      "back_to_cart_preserves_fields": true,
+      "javascript_errors": []
+    }
+  ],
+  "self_contained_export": "passed",
+  "actual_messages_sent": 0,
+  "unit_tests_passed": 18
+}

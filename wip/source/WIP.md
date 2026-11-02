@@ -15,7 +15,7 @@ Les sorties sont :
 
 - `wip/index.html` : site autonome avec les images et la vidéo présentes lors de l’export, à ouvrir directement dans un navigateur ;
 - `wip/README.md` : instructions de consultation et état des fonctions ;
-- `wip/source/` : copie réutilisable des fichiers de développement, comprenant les médias et les sources reçues ;
+- `wip/source/` : copie réutilisable des fichiers de développement, comprenant les médias, les sources reçues et, si disponibles, les captures et résultats de vérification dans `source/review/` ;
 - `downloads/zemaya-wip.zip` : archive contenant un dossier supérieur `wip/`.
 
 La commande de génération ne publie rien et n’envoie aucun fichier à GitHub. Elle ne crée pas non plus d’adresse web publique.
@@ -24,7 +24,7 @@ La commande de génération ne publie rien et n’envoie aucun fichier à GitHub
 
 Pour consulter le résultat hors ligne, ouvrez `wip/index.html`. Pour développer, placez-vous dans `wip/source/` et lancez `npm run dev`. Le serveur utilise le port 5173. Les médias inclus sont les fichiers disponibles au moment de la génération.
 
-Le panier fonctionne dans le navigateur. Les services de contact, de prise de commande et de paiement ne sont pas configurés. Les coordonnées, informations juridiques et modalités commerciales restent à compléter avant l’ouverture des ventes. Aucune transmission de commande ou de paiement n’est annoncée.
+Le panier fonctionne dans le navigateur. Les demandes de commande sont préparées pour WhatsApp. Le client doit lui-même appuyer sur Envoyer ; la boutique confirme ensuite les produits, la livraison et le règlement. Le formulaire de contact et les paiements ne sont pas raccordés. Les coordonnées, informations juridiques et modalités commerciales restent à compléter avant l’ouverture des ventes. Aucun paiement ni aucune confirmation de commande ne sont produits automatiquement.
 
 ## Régénération et protection des fichiers
 
